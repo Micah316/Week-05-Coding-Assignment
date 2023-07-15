@@ -14,7 +14,7 @@ class Book {
 class Library {
     constructor(name) {
         this.name = name;
-        this.books = [];
+        this.books = [ ];
     }
  
 //When we call this describe method it will return the name of the library
@@ -52,7 +52,7 @@ class Menu {
         }
         alert("Happy Ever After fellow reader!");
     }
-    showMainMenu(){
+    showMainMenu() {
         return prompt(`
         0) Exit application
         1) Create a new library
@@ -91,7 +91,7 @@ viewLibrary() {
     let index = prompt(
         "Enter the index number of the library you would like to view: "
     );
-    if (index > i && index < this.libraries.length) {
+    if (index > -1 && index < this.libraries.length) {
         this.selectedLibrary = this.libraries[index]; 
         let description = "Library Name :" + this.selectedLibrary.name + '\n';
         description += " " + this.selectedLibrary.describe() + '\n';
@@ -99,7 +99,7 @@ viewLibrary() {
             description += i + ")" + this.selectedLibrary.books[i].describe() + '\n';
         }
         let selection1 = this.showBookMenuOptions(description);
-            switch (selection) {
+            switch (selection1) {
                 case "1": 
                 this.createBook(); 
                 break;
@@ -137,11 +137,3 @@ deleteBook() {
 }
 let menu = new Menu();
 menu.start(); 
-
-
-
-
-
-
-
-
